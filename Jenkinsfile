@@ -44,20 +44,7 @@ def notifyBuild(String buildStatus = 'STARTED',String thiserr) {
 
     colorCode = '#00FF00'
 
-          step([$class: '       ',
-
-        contextSource: [$class: 'ManuallyEnteredCommitContextSource',
-
-        context: 'BUILD STATUS'],
-
-        statusResultSource: [$class: 'ConditionalStatusResultSource',
-
-        results: [[$class: 'AnyBuildResult',
-
-        message: 'SUCCESSFUL',
-
-        state: 'SUCCESS']]]])
-
+step([$class: 'GitHubCommitStatusSetter', statusResultSource: [$class: 'ConditionalStatusResultSource', results: [[$class: 'AnyBuildResult', message: 'done', state: 'SUCCESS']]]])
         echo "status set to ${buildStatus}."
 
 
@@ -67,19 +54,7 @@ def notifyBuild(String buildStatus = 'STARTED',String thiserr) {
 
     colorCode = '#FF0000'
 
-          step([$class: 'GitHubCommitStatusSetter',
-
-        contextSource: [$class: 'ManuallyEnteredCommitContextSource',
-
-        context: 'BUILD STATUS'],
-
-        statusResultSource: [$class: 'ConditionalStatusResultSource',
-
-        results: [[$class: 'AnyBuildResult',
-
-        message: 'FAILED',
-
-        state: '${buildStatus}']]]])
+step([$class: 'GitHubCommitStatusSetter', statusResultSource: [$class: 'ConditionalStatusResultSource', results: [[$class: 'AnyBuildResult', message: 'done', state: 'FAILURE']]]])
 
         echo "status set to ${buildStatus}."
 
