@@ -34,7 +34,6 @@ def notifyBuild(String buildStatus = 'STARTED',String thiserr) {
 
 
   if (buildStatus == 'STARTED') {
-                                                                                                                             33,0-1        Top
     color = 'YELLOW'
 
     colorCode = '#FFFF00'
@@ -66,7 +65,6 @@ def notifyBuild(String buildStatus = 'STARTED',String thiserr) {
 
     color = 'RED'
 
-                                                                                                                             33,0-1        57%
     colorCode = '#FF0000'
 
           step([$class: 'GitHubCommitStatusSetter',
