@@ -18,7 +18,7 @@ node('master'){
 
         notifyBuild(currentBuild.result,"NULL")
 
-
+}
 
 
 def notifyBuild(String buildStatus = 'STARTED',String thiserr) {
@@ -85,4 +85,4 @@ def notifyBuild(String buildStatus = 'STARTED',String thiserr) {
 
 }
 }
-}
+
