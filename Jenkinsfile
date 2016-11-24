@@ -8,6 +8,7 @@ node('master'){
 
                 stage ('Print'){
                         println "Hello"
+			sh "exit 1"
                 }
 
 	notifyBuild(currentBuild.result,"NULL")
@@ -15,6 +16,7 @@ node('master'){
         catch(e)
         {
                 notifyBuild("FAILED","${e}")
+		throw e
         }
 
 
