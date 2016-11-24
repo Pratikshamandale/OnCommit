@@ -10,13 +10,13 @@ node('master'){
                         println "Hello"
                 }
 
+	notifyBuild(currentBuild.result,"NULL")
         }
         catch(e)
         {
                 notifyBuild("FAILED","${e}")
         }
 
-        notifyBuild(currentBuild.result,"NULL")
 
 }
 
