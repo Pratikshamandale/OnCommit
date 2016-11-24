@@ -16,6 +16,7 @@ node('master'){
         catch(e)
         {
                 notifyBuild("FAILED","${e}")
+		throw e
         }
 
 
