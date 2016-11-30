@@ -3,7 +3,8 @@ node('master'){
         try{
                 stage('Checkout') {
 
-                        checkout scm
+                        checkout([$class: 'GitSCM', branches: [[name: '**']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: '1b4c58ed-4fbc-4be0-97e6-dcf63419b44b', url: 'https://github.com/Pratikshamandale/OnCommit.git']]])
+
                 }
 
                 stage ('Print'){
