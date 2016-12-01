@@ -4,6 +4,8 @@ node('master'){
                 
                 stage ('Print'){
                         println "Hello"
+			exit 1
+
                 }
 
 	notifyBuild(currentBuild.result,"NULL")
