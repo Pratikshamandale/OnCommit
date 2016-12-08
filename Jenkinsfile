@@ -2,9 +2,9 @@ node('master'){
 
 
 
-                stage ('Print'){
+                stage 'Print'
                         println "Hello"
-                }
+               
 
 //                notifyBuild(currentBuild.result,"NULL")
 
