@@ -4,7 +4,7 @@ node('master'){
    
                 stage 'Print'
                         println "Hello"
-			exit 1
+			
 
              
 
