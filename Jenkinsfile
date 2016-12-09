@@ -1,16 +1,12 @@
 node('master'){
 
         try{
-                stage('Checkout') {
-
-                        checkout scm
-                }
-
-                stage ('Print'){
+   
+                stage 'Print'
                         println "Hello"
 			exit 1
 
-                }
+             
 
 	notifyBuild(currentBuild.result,"NULL")
         }
